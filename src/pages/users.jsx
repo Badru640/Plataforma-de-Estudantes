@@ -179,10 +179,14 @@ export const Users = () => {
                     >
                         <h2 className="text-lg mb-2">Adicionar Novo Usuário</h2>
                         <div className="grid grid-cols-2 gap-4">
-                            <input type="text" name="id" value={newUser.id} onChange={handleInputChange} placeholder="ID" className="border p-2 rounded" />
+                            <input type="number" name="id" value={newUser.id} onChange={handleInputChange} placeholder="ID" className="border p-2 rounded" />
                             <input type="text" name="name" value={newUser.name} onChange={handleInputChange} placeholder="Nome" className="border p-2 rounded" />
-                            <input type="text" name="age" value={newUser.age} onChange={handleInputChange} placeholder="Idade" className="border p-2 rounded" />
-                            <input type="text" name="gender" value={newUser.gender} onChange={handleInputChange} placeholder="Gênero" className="border p-2 rounded" />
+                            <input type="number" name="age" value={newUser.age} onChange={handleInputChange} placeholder="Idade" className="border p-2 rounded" />
+                            <select name="gender" value={newUser.gender} onChange={handleInputChange}  className="border p-2 rounded" >
+                                <option value="">Selecione o Genero</option>
+                                <option value="male">Masculino</option>
+                                <option value="female">Femenino</option>
+                            </select>
                         </div>
                         <motion.button
                             onClick={handleAddUser}
@@ -228,7 +232,11 @@ export const Users = () => {
                                     </div>
                                     <div>
                                         <strong>Gênero:</strong> {isEditMode ? (
-                                            <input type="text" name="gender" value={editUser.gender} onChange={handleInputChange} className="border p-2 rounded" />
+                                                                        <select name="gender" value={newUser.gender} onChange={handleInputChange}  className="border p-2 rounded" >
+                                                                        <option value="">Selecione o Genero</option>
+                                                                        <option value="male">Masculino</option>
+                                                                        <option value="female">Femenino</option>
+                                                                    </select>
                                         ) : (editUser.gender === 'male' ? 'Masculino' : 'Feminino')}
                                     </div>
                                 </div>
