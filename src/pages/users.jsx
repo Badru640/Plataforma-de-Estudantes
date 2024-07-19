@@ -10,8 +10,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import { CSSTransition } from 'react-transition-group';
-import { motion } from 'framer-motion'; // Importando do Framer Motion
+import { motion } from 'framer-motion';
 import '../components/animations.css';
+import Footer from '../components/header/footer';
 
 export const Users = () => {
     const [users, setUsers] = useState([
@@ -23,6 +24,7 @@ export const Users = () => {
         { id: "6", name: "Yuran", age: "28", gender: "male", profilePicture: "https://randomuser.me/api/portraits/men/6.jpg" },
         { id: "7", name: "Predo", age: "29", gender: "male", profilePicture: "https://randomuser.me/api/portraits/men/7.jpg" },
         { id: "8", name: "Alcinda", age: "28", gender: "female", profilePicture: "https://randomuser.me/api/portraits/women/8.jpg" },
+        { id: "9", name: "Isabel", age: "28", gender: "female", profilePicture: "https://randomuser.me/api/portraits/women/9.jpg" },
     ]);
 
     const [newUser, setNewUser] = useState({ id: '', name: '', age: '', gender: '', profilePicture: '' });
@@ -138,6 +140,9 @@ export const Users = () => {
         });
 
     return (
+        <body className='bg-gradient-to-r from-blue-400 to-purple-600 '>
+            
+        
         <div>
             <Header />
             <div className="bg-gradient-to-r from-blue-400 to-purple-600 py-10 min-h-screen grid place-items-center">
@@ -200,6 +205,12 @@ export const Users = () => {
                 </CSSTransition>
             </div>
             <ToastContainer />
+            <motion.footer   initial={{ x: '-50%', opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 5.0, delay: 0.4 }}>
+      <Footer/>
+            
+        </motion.footer>
             <CSSTransition
                 in={open}
                 timeout={300}
@@ -254,6 +265,7 @@ export const Users = () => {
                 </Dialog>
             </CSSTransition>
         </div>
+        </body>
     );
 }
 
