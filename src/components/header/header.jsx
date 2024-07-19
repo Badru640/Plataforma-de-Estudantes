@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <header className="flex items-center justify-between bg-gradient-to-r from-black via-black/90 to-black text-white h-20 w-full text-lg">
-      <h1 className="text-2xl font-bold p-2 ml-8"><SketchLogo/></h1>
+      <h1 className="text-2xl font-bold p-2 ml-8"><SketchLogo size={30}/></h1>
       <section className="flex gap-10 mr-8">
         <NavBar />
         <Link to="/users">
