@@ -4,11 +4,8 @@ import { route } from "./routes";
 const App = () => {
 return(
   <>
-
   <RouterProvider router={route} />
-
-     
-  </>
+ </>
 )
 
 };

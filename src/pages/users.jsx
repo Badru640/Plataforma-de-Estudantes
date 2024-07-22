@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import MUIDataTable from "mui-datatables";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Header } from "../components/header/header";
@@ -25,6 +25,8 @@ export const Users = () => {
         { id: "7", name: "Predo", age: "29", gender: "male", profilePicture: "https://randomuser.me/api/portraits/men/7.jpg" },
         { id: "8", name: "Alcinda", age: "28", gender: "female", profilePicture: "https://randomuser.me/api/portraits/women/8.jpg" },
         { id: "9", name: "Isabel", age: "28", gender: "female", profilePicture: "https://randomuser.me/api/portraits/women/9.jpg" },
+        { id: "10", name: "Ancha", age: "22", gender: "female", profilePicture: "https://randomuser.me/api/portraits/women/10.jpg" },
+        { id: "11", name: "Francisca", age: "29", gender: "female", profilePicture: "https://randomuser.me/api/portraits/women/11.jpg" },
     ]);
 
     const [newUser, setNewUser] = useState({ id: '', name: '', age: '', gender: '', profilePicture: '' });
@@ -108,7 +110,7 @@ export const Users = () => {
     const options = {
         selectableRows: true,
         elevation: 0,
-        rowsPerPage: 5,
+        rowsPerPage: 10,
         rowsPerPageOptions: [5, 10, 15, 20, 30],
         onRowClick: handleRowClick,
     };

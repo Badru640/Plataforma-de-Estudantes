@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Header } from '../components/header/header';
 import Foto from "../img/IMG_2056.jpeg";
